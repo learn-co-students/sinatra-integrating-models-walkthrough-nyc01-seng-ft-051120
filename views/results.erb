@@ -1,9 +1,9 @@
 <h1>Your Text Analysis</h1>
+<%t=TextAnalyzer.new(@text_from_user)%>
+<h2>Number of Words: <%= t.word_count %></h2>
 
-<h2>Number of Words: </h2>
+<h2>Vowels: <%= t.vowel_count%> </h2>
 
-<h2>Vowels: </h2>
-
-<h2>Consonants: </h2>
-
-<h2>Most Common Letter: _____ used _____ times</h2>
+<h2>Consonants: <%= t.count_of_consonants.to_s%>  </h2>
+<%l=t.most_used_letter.first%>
+<h2>Most Common Letter: <%=l[0].upcase%>, used <%=l[1].to_s%> times</h2>
